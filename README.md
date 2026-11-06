@@ -1,56 +1,71 @@
 # Vue 3 SPA Starter Template
 
-Минималистичный, чистый и производительный стартовый шаблон для SPA на **Vue 3**. Без лишнего кода, демонстрационных счетчиков и бойлерплейта.
+A minimalist, high-performance starter template for Single Page Applications (SPA) built with **Vue 3**. Clean architecture, zero bloat, strict TypeScript, Rust-powered linting and formatting, and automated pre-commit verification.
 
 ---
 
-## 🚀 Стек
+## 🚀 Tech Stack
 
 - **Vue 3.5+** (Composition API, `<script setup>`)
-- **TypeScript** (строгий режим + `vue-tsc` для валидации типов)
-- **Vite** (быстрый HMR и сборка)
-- **Tailwind CSS v4** (`@tailwindcss/vite`)
-- **Vue DevTools** (`vite-plugin-vue-devtools` встроенная панель инспекции)
-- **Vue Router 5 & Pinia** (готовы к использованию при добавлении страниц и стейта)
-- **oxlint** (ультрабыстрый линтер на Rust)
-- **oxfmt** (ультрабыстрый форматтер на Rust с авто-сортировкой классов Tailwind и импортов)
-- **Lefthook** (быстрый pre-commit хук для typecheck, lint и format)
-- **Bun** (пакетный менеджер)
+- **TypeScript** (Strict mode + `vue-tsc` build-time validation)
+- **Vite** (Lightning-fast HMR and bundling)
+- **Tailwind CSS v4** (`@tailwindcss/vite` zero-config integration)
+- **Vue DevTools** (`vite-plugin-vue-devtools` in-app inspection)
+- **Vue Router 5 & Pinia** (Ready-to-use SPA routing and reactive state management)
+- **oxlint** (Rust-powered ultra-fast linter)
+- **oxfmt** (Rust-powered formatter with built-in Tailwind CSS class and import sorting)
+- **Lefthook** (Sub-second parallel Git pre-commit hooks)
+- **Bun** (Fast package manager with automated lifecycle hook setup)
 
 ---
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```text
 vue-template/
-├── .vscode/                 # Рекомендации расширений для VS Code
-├── public/                  # Favicon и статика
+├── .vscode/                 # Recommended VS Code extensions (Volar, Oxc, Tailwind)
+├── public/                  # Static assets (favicon.svg, etc.)
 ├── src/
-│   ├── assets/              # main.css (@import "tailwindcss";)
-│   ├── components/          # Компоненты приложения
-│   ├── router/              # Конфиг Vue Router (заготовка)
-│   ├── stores/              # Pinia хранилища
-│   ├── App.vue              # Минимальный корневой компонент
-│   └── main.ts              # Точка входа
-├── index.html
-├── lefthook.yml             # Конфигурация pre-commit хука
-├── .oxlintrc.json           # Конфигурация oxlint
-├── .oxfmtrc.json            # Конфигурация oxfmt
-├── tsconfig.json            # TypeScript конфиг
-├── vite.config.ts           # Vite конфиг (Vue, DevTools, Tailwind)
-└── package.json
+│   ├── assets/              # Global styles (main.css importing Tailwind v4)
+│   ├── components/          # Reusable UI components
+│   ├── router/              # Vue Router SPA route definitions
+│   ├── stores/              # Pinia state stores
+│   ├── App.vue              # Minimal root component
+│   └── main.ts              # Application entry point
+├── AGENTS.md                # AI agent guidelines & engineering rules
+├── env.d.ts                 # Vite environment type declarations
+├── index.html               # SPA mounting entry
+├── lefthook.yml             # Lefthook pre-commit configuration
+├── .oxlintrc.json           # Oxlint configuration
+├── .oxfmtrc.json            # Oxfmt configuration
+├── tsconfig.json            # Root TypeScript configuration
+├── tsconfig.app.json        # Application TypeScript configuration
+├── tsconfig.node.json       # Tooling TypeScript configuration
+├── vite.config.ts           # Vite configuration
+└── package.json             # Scripts and dependencies
 ```
 
 ---
 
-## 🛠 Команды
+## 🛠 Available Scripts
 
-```bash
-bun run dev          # Запуск сервера разработки (с Vue DevTools)
-bun run build        # Проверка типов (vue-tsc) + production сборка
-bun run typecheck    # Проверка типов
-bun run lint         # Проверка oxlint
-bun run lint:fix     # Автоисправление oxlint
-bun run format       # Форматирование через oxfmt
-bun run format:check # Проверка форматирования oxfmt
-```
+| Script                 | Description                                                       |
+| :--------------------- | :---------------------------------------------------------------- |
+| `bun run dev`          | Start local Vite development server with Vue DevTools             |
+| `bun run build`        | Validate types (`vue-tsc`) and bundle for production              |
+| `bun run preview`      | Locally preview the production build                              |
+| `bun run typecheck`    | Run TypeScript type checking without emitting files               |
+| `bun run lint`         | Lint code using `oxlint`                                          |
+| `bun run lint:fix`     | Automatically fix lint issues using `oxlint --fix`                |
+| `bun run format`       | Format files using `oxfmt` (with Tailwind class & import sorting) |
+| `bun run format:check` | Check code formatting compliance                                  |
+
+---
+
+## 🛡 Pre-commit Hooks (Lefthook)
+
+Git hooks are automatically configured on `bun install`. Before any commit is created, Lefthook executes:
+
+1. `typecheck` (`vue-tsc --noEmit`)
+2. `oxlint` (staged files)
+3. `oxfmt` (formats staged files and stages fixes automatically)
