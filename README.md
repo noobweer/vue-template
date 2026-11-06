@@ -4,7 +4,7 @@ A minimalist, high-performance starter template for Single Page Applications (SP
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Vue 3.5+** (Composition API, `<script setup>`)
 - **TypeScript** (Strict mode + `vue-tsc` build-time validation)
@@ -19,7 +19,7 @@ A minimalist, high-performance starter template for Single Page Applications (SP
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 vue-template/
@@ -47,7 +47,7 @@ vue-template/
 
 ---
 
-## 🛠 Available Scripts
+## Available Scripts
 
 | Script                 | Description                                                       |
 | :--------------------- | :---------------------------------------------------------------- |
@@ -62,7 +62,7 @@ vue-template/
 
 ---
 
-## 🛡 Pre-commit Hooks (Lefthook)
+## Pre-commit Hooks (Lefthook)
 
 Git hooks are automatically configured on `bun install`. Before any commit is created, Lefthook executes:
 
