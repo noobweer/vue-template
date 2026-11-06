@@ -10,6 +10,7 @@
 - **TypeScript** (строгий режим + `vue-tsc` для валидации типов)
 - **Vite** (быстрый HMR и сборка)
 - **Tailwind CSS v4** (`@tailwindcss/vite`)
+- **Vue DevTools** (`vite-plugin-vue-devtools` встроенная панель инспекции)
 - **Vue Router 5 & Pinia** (готовы к использованию при добавлении страниц и стейта)
 - **oxlint** (ультрабыстрый линтер на Rust)
 - **oxfmt** (ультрабыстрый форматтер на Rust с авто-сортировкой классов Tailwind и импортов)
@@ -36,7 +37,7 @@ vue-template/
 ├── .oxlintrc.json           # Конфигурация oxlint
 ├── .oxfmtrc.json            # Конфигурация oxfmt
 ├── tsconfig.json            # TypeScript конфиг
-├── vite.config.ts           # Vite конфиг
+├── vite.config.ts           # Vite конфиг (Vue, DevTools, Tailwind)
 └── package.json
 ```
 
@@ -45,7 +46,7 @@ vue-template/
 ## 🛠 Команды
 
 ```bash
-bun run dev          # Запуск сервера разработки
+bun run dev          # Запуск сервера разработки (с Vue DevTools)
 bun run build        # Проверка типов (vue-tsc) + production сборка
 bun run typecheck    # Проверка типов
 bun run lint         # Проверка oxlint

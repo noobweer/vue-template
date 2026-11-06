@@ -4,6 +4,7 @@ const stack = [
   'TypeScript',
   'Vite',
   'Tailwind CSS v4',
+  'Vue DevTools',
   'Vue Router',
   'Pinia',
   'oxlint',
